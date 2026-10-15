@@ -1,0 +1,6 @@
+.kind { background: var(--pink-soft); text-align: center; padding-block: 52px; }
+.kind__quote {
+  font-family: var(--display); font-size: clamp(2.4rem, 7vw, 4rem); line-height: .95;
+  color: var(--pink); margin: 10px 0 12px; letter-spacing: -.025em;
+}
+.kind__quote b { font-family: var(--body); font-weight: 800; font-size: .8em; letter-spacing: -.03em; display: block; }

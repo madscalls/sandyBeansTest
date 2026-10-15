@@ -1,0 +1,23 @@
+.scallop {
+  position: relative;
+  z-index: 2;
+  height: 22px;
+  background: radial-gradient(circle at 11px 0, var(--blush) 11px, transparent 11.5px) 0 0 / 22px 22px repeat-x;
+}
+.bow {
+  position: absolute;
+  top: -20px;
+  width: 58px;
+  height: 54px;
+  transform: translateX(-50%) rotate(var(--r));
+  transform-origin: 50% 35%;
+  animation: bow-sway 4s ease-in-out infinite;
+  filter: drop-shadow(0 2px 3px rgba(234, 141, 176, .35));
+}
+@keyframes bow-sway {
+  0%, 100% { transform: translateX(-50%) rotate(var(--r)); }
+  50% { transform: translateX(-50%) rotate(calc(var(--r) * -1)); }
+}
+@media (max-width: 520px) {
+  .bow { width: 44px; height: 41px; top: -15px; }
+}

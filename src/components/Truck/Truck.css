@@ -1,0 +1,32 @@
+.truck-stage { position: relative; width: 100%; max-width: 380px; min-width: 0; margin-top: -6px; }
+.truck-stage__ground { height: 10px; margin: -6px auto 0; border-radius: 50%; background: var(--pink-soft); max-width: 340px; }
+
+.truck {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  animation: truck-roll-in 1.6s cubic-bezier(.2, .8, .25, 1) .3s both;
+}
+.truck__wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: truck-spin 1.6s cubic-bezier(.2, .8, .25, 1) .3s both;
+}
+.truck__steam { animation: truck-steam 3s ease-in-out 1.6s infinite; }
+
+/* state classes (set from Truck.jsx); later rules win over earlier ones */
+.truck.is-parked, .truck.is-parked .truck__wheel { animation: none; }
+.truck.is-leaving { animation: truck-zoom-off .7s cubic-bezier(.5, 0, .9, .5) forwards; }
+.truck.is-leaving .truck__wheel { animation: truck-spin-fast .7s ease-in forwards; }
+.truck.is-gone { transform: translateX(-120vw); }
+.truck.is-returning { animation: truck-back-in 1.1s cubic-bezier(.2, .8, .25, 1) both; }
+.truck.is-returning .truck__wheel { animation: truck-spin 1.1s cubic-bezier(.2, .8, .25, 1) both; }
+
+@keyframes truck-roll-in { from { transform: translateX(-110vw); } to { transform: none; } }
+@keyframes truck-zoom-off { 0% { transform: none; } 15% { transform: translateX(-12px); } 100% { transform: translateX(120vw); } }
+@keyframes truck-back-in { from { transform: translateX(-120vw); } 75% { transform: translateX(10px); } to { transform: none; } }
+@keyframes truck-spin { from { transform: rotate(-540deg); } to { transform: rotate(0); } }
+@keyframes truck-spin-fast { from { transform: rotate(0); } to { transform: rotate(900deg); } }
+@keyframes truck-steam { 0%, 100% { opacity: .2; transform: translateY(0); } 50% { opacity: .85; transform: translateY(-6px); } }

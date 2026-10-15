@@ -1,0 +1,21 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  overflow-x: clip;
+  background:
+    radial-gradient(120% 80% at 85% 0%, var(--pink-soft) 0%, transparent 60%),
+    radial-gradient(90% 70% at 0% 100%, var(--sand-2) 0%, transparent 65%),
+    var(--sand);
+}
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding-block: 36px 40px;
+}
+.hero__label { margin-top: 10px; }
+.hero__tag { font-size: 1.15rem; color: var(--ink-soft); margin: 4px auto 0; max-width: 34ch; }

@@ -1,0 +1,29 @@
+.logo {
+  width: min(300px, 72vw);
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #FFFFFF, 0 18px 40px -18px rgba(224, 103, 154, .55);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform-origin: 50% 60%;
+  animation: logo-pop .9s cubic-bezier(.3, 1.5, .5, 1) both;
+}
+.logo.is-popped { animation: none; }
+.logo.is-boing { animation: logo-boing .7s ease-out both; }
+
+@keyframes logo-pop {
+  from { transform: scale(.6); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes logo-boing {
+  0% { transform: scale(1); }
+  18% { transform: scale(.9); }
+  36% { transform: scale(1.04); }
+  52% { transform: scale(.98); }
+  68% { transform: scale(1.015); }
+  84% { transform: scale(.995); }
+  100% { transform: scale(1); }
+}

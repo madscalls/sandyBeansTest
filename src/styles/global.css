@@ -1,0 +1,77 @@
+/* Palette pulled from her Instagram: white + baby pink, hot-pink type, minty teal.
+   Single light look by design, so there is no dark theme. */
+:root {
+  --sand: #FFFFFF;
+  --sand-2: #FFF0F5;
+  --ink: #5A3247;
+  --ink-soft: #97738A;
+  --pink: #E0679A;
+  --blush: #F7C3D6;
+  --pink-soft: #FDE6EF;
+  --on-pink: #FFFFFF;
+  --teal: #6CC2B2;
+  --teal-deep: #2E9483;
+  --teal-soft: #E3F5F0;
+  --card: #FFFFFF;
+  --line: #F8DCE7;
+
+  --display: "DM Serif Display", "Georgia", serif;
+  --body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+img { max-width: 100%; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- shared layout ---------- */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: 56px; }
+
+h1, h2 { font-family: var(--display); font-weight: 400; line-height: .95; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(2.4rem, 6vw, 3.4rem); color: var(--pink); letter-spacing: -.02em; text-transform: lowercase; }
+
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 800; color: var(--teal-deep); }
+.label { font-size: .68rem; letter-spacing: .32em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.pill {
+  display: inline-block; font-size: .66rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 999px; background: var(--pink-soft); color: var(--ink-soft);
+  margin-left: 6px; vertical-align: middle;
+}
+
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.sec-head p { margin: 6px 0 0; color: var(--ink-soft); max-width: 46ch; }
+.sample-note { font-size: .85rem; background: var(--pink-soft); color: var(--ink); padding: 8px 12px; border-radius: 10px; display: inline-block; margin-bottom: 18px; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; font: 800 .9rem var(--body); text-decoration: none;
+  padding: 10px 16px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn.pink { background: var(--pink); color: #fff; }
+.btn.ghost { border-color: var(--teal); color: var(--teal-deep); background: transparent; }
+.btn svg { width: 16px; height: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

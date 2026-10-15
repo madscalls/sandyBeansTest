@@ -1,0 +1,46 @@
+.schedule__filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  font: 700 .85rem var(--body); padding: 8px 14px; border-radius: 999px;
+  border: 2px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+.schedule__list { display: grid; gap: 12px; list-style: none; padding: 0; margin: 0; }
+.schedule__empty { padding: 28px; text-align: center; color: var(--ink-soft); background: var(--card); border-radius: 18px; border: 1px dashed var(--line); }
+
+.ev {
+  display: grid; grid-template-columns: 84px 1fr auto; gap: 18px; align-items: center;
+  background: var(--card); border-radius: 18px; padding: 14px 18px 14px 14px; border: 1px solid var(--line);
+}
+.ev--today { border: 2px solid var(--pink); }
+.ev__date {
+  text-align: center; border-radius: 14px; background: var(--teal-soft); color: var(--teal-deep);
+  padding: 8px 0; line-height: 1.1; font-variant-numeric: tabular-nums;
+}
+.ev--today .ev__date, .ev--cause .ev__date { background: var(--pink); color: #fff; }
+.ev__dow { font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.ev__d { font-family: var(--display); font-size: 1.9rem; }
+.ev__m { font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+.ev__body { min-width: 0; }
+.ev h3 { margin: 0; font-size: 1.12rem; line-height: 1.25; }
+.ev__meta { color: var(--ink-soft); font-size: .92rem; margin-top: 2px; }
+.ev__meta b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.ev__tagline { display: block; margin-top: 6px; font-size: .92rem; color: var(--ink); }
+.ev__note { display: inline-block; margin-top: 6px; font-size: .78rem; font-weight: 800; color: var(--pink); text-transform: uppercase; letter-spacing: .08em; }
+.ev__actions { display: flex; gap: 8px; }
+
+.ev--cause { background: var(--sand-2); border: 2px solid var(--pink); }
+.ev--cause h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; color: var(--pink); letter-spacing: -.02em; text-transform: lowercase; line-height: 1; }
+
+.icon-btn {
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid var(--line); color: var(--teal-deep); text-decoration: none; background: transparent;
+}
+.icon-btn:hover { border-color: var(--teal); }
+.icon-btn svg { width: 18px; height: 18px; }
+
+@media (max-width: 520px) {
+  .ev { grid-template-columns: 64px 1fr; gap: 12px; }
+  .ev__actions { grid-column: 1 / -1; }
+  .ev__d { font-size: 1.5rem; }
+}
