@@ -1,0 +1,33 @@
+.social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font: 800 .88rem var(--body);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform .15s, box-shadow .15s;
+}
+.social-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -12px rgba(90, 50, 71, .55);
+}
+.social-pill svg { width: 18px; height: 18px; flex: none; }
+
+.social-pill--tt { background: var(--pink-soft); color: var(--pink); border-color: var(--blush); }
+.social-pill--ig { background: var(--teal); color: #FFFFFF; }
+.social-pill--fb { background: var(--card); color: var(--pink); border-color: var(--line); }
+
+@media (max-width: 420px) {
+  .social-pills { gap: 6px; }
+  .social-pill { padding: 8px 11px; gap: 6px; font-size: .8rem; }
+  .social-pill svg { width: 16px; height: 16px; }
+}
